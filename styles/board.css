@@ -1,0 +1,37 @@
+.board {
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.board__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 300px;
+}
+
+.board__row-top {
+    border-bottom: 1px solid black;
+}
+
+.board__row-middle {
+    border-bottom: 1px solid black;
+}
+
+.board__square {
+    width:100px;
+    height: 100px;
+    background: lightgreen;
+    /* border:1px solid black; */
+}
+
+.board__square-left {
+    border-right: 1px black solid;
+}
+
+.board__square-middle {
+    border-right: 1px solid black;
+}
