@@ -1,4 +1,6 @@
 import { GameBoard } from './gameBoard.js'
-window.onload = () => {
+
+export const Game = () => {
+    // Initialize board
     let board = (GameBoard)();
 }

@@ -1,4 +1,5 @@
 export const createPlayer = ({ name, symbol }) => ({
     name,
-    symbol
+    symbol,
+    placedSquares: []
 });

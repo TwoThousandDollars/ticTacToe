@@ -26,6 +26,9 @@
     width:100px;
     height: 100px;
     background: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* border:1px solid black; */
 }
 
