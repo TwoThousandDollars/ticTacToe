@@ -52,6 +52,10 @@ export const GameBoard = () => {
 
     }
 
+    function alertWinner() {
+        
+    }
+
     function getWinningScenarios() {
         return [
             [1,2,3],
