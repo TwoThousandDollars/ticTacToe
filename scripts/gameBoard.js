@@ -1,15 +1,10 @@
-import { createPlayer } from './player.js';
 import { Game } from './game.js';
 
 export const GameBoard = () => {
     // Virtual game board
     let squares = ['', '', '', '', '', '', '', '', ''];
+    let game = (Game)();
     let winningScenarios = getWinningScenarios();
-
-    // Initiate players
-    let playerOne = createPlayer({ name: "Player One", symbol: "X" });
-    let playerTwo = createPlayer({ name: "Player Two", symbol: "O" });
-    let currentPlayer = playerOne;
 
     // Cache Dom
     let cachedSquares = Array.from(document.querySelectorAll('.board__square'));
@@ -26,26 +21,17 @@ export const GameBoard = () => {
         
         unbindEventListener(this);
         
-        this.innerText = currentPlayer.symbol;
+        this.innerText = game.currentPlayer.symbol;
 
-        squares[index] = currentPlayer.symbol;
+        squares[index] = game.currentPlayer.symbol;
         
-        currentPlayer.placedSquares.push(index);
+        game.currentPlayer.placedSquares.push(index);
         
-        checkForWinner();
+        game.checkForWinner();
     }
-
+    
     function unbindEventListener(square) {
         square.removeEventListener('click', fillSquare);
-    }
-
-    function switchCurrentPlayer() {
-        currentPlayer = (currentPlayer === playerOne) ? playerTwo : playerOne;
-    }
-
-    function checkForWinner() {
-        
-        switchCurrentPlayer();
     }
 
     function startNewGame() {
@@ -53,7 +39,7 @@ export const GameBoard = () => {
     }
 
     function alertWinner() {
-        
+
     }
 
     function getWinningScenarios() {
